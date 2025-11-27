@@ -1,0 +1,13 @@
+projeto: mercado-1.0
+linguagem: C++
+compilador: g++ 13.3.0
+criador: gabriel
+
+inicio: 25/11/2025
+
+1. lidar com a entrada de dados (espaços, caracteres não permitidos, números...).
+2. alocar memória (se necessário).
+3. selecionar bem o nome das funções.
+4. pegar hora, minuto e segundo (e mostrar isso na tela enquanto o programa executa).
+5. ter uma lista com o nome de usuários especifícos para acessar a parte administrativa do sistema (admin).
+6. ter estruturas (structs) bem definidas.
