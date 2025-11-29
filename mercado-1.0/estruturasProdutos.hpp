@@ -51,26 +51,26 @@ struct MERCADO{
         const array<string, 10> setor_OUTRAS = {"Energético", "Chá gelado", "Café pronto", "Achocolatado", "Isotônico", "Kombucha", "Sidra", "Hard seltzer", "Licor", "Vodka"};
     }BEBIDAS;
 
-    struct HIGIENTE_LIMPEZA{
+    struct HIGIENE{
         const array<string, 10> setor_CASA = {"Detergente", "Sabão em pó", "Sabão líquido", "Desinfetante", "Água sanitária", "Limpador multiuso", "Amaciante", "Limpa vidro", "Desengordurante", "Esponja de limpeza"};
         const array<string, 10> setor_PESSOAL = {"Sabonete", "Shampoo", "Condicionador", "Creme dental", "Escova de dentes", "Desodorante", "Fio dental", "Papel higiênico", "Enxaguante bucal", "Sabonete líquido"};
         const array<string, 10> setor_COSMETICOS = {"Creme hidratante", "Protetor solar", "Gel para cabelo", "Perfume", "Creme facial", "Base de maquiagem", "Batom", "Demaquilante", "Óleo capilar", "Esfoliante"};
-        const array<string, 10> setor_U_LIMPEZA = {"Vassoura", "Rodo", "Pano de chão", "Balde", "Mop", "Escova de limpeza", "Luvas de borracha", "Flanela", "Saco de lixo", "Pá de lixo"};
+        const array<string, 10> setor_LIMPEZA = {"Vassoura", "Rodo", "Pano de chão", "Balde", "Mop", "Escova de limpeza", "Luvas de borracha", "Flanela", "Saco de lixo", "Pá de lixo"};
         const array<string, 10> setor_DESCARTAVEIS = {"Guardanapos", "Pratos descartáveis", "Copos descartáveis", "Talheres descartáveis", "Toalhas de papel", "Panos umedecidos", "Luvas descartáveis", "Sacos ziplock", "Formas de alumínio", "Papel filme"};
-    }HIGIENTE_LIMPEZA;
+    }HIGIENE;
 
-    struct UTENSILIOS_DOMESTICOS{
+    struct UTENSILIOS{
         const array<string, 10> setor_PANELAS = {"Panela de pressão", "Panela antiaderente", "Caçarola", "Frigideira", "Wok", "Panela de alumínio", "Panela de ferro", "Chaleira", "Leiteira", "Tacho"};
         const array<string, 10> setor_TALHERES = {"Garfo", "Faca", "Colher", "Colher de sobremesa", "Colher de chá", "Espátula", "Concha", "Pegador de massa", "Faca de serra", "Faca de cozinha"};
         const array<string, 10> setor_PRATOS = {"Prato raso", "Prato fundo", "Prato de sobremesa", "Tigela pequena", "Tigela média", "Tigela grande", "Travessa", "Bowl", "Assadeira de vidro", "Assadeira de alumínio"};
         const array<string, 10> setor_COPOS = {"Copo de vidro", "Copo americano", "Taça de vinho", "Taça de espumante", "Caneca cerâmica", "Copo plástico", "Copo térmico", "Jarra de suco", "Garrafa térmica", "Copo medidor"};
-        const array<string, 10> setor_UG_COZINHA = {"Escorredor de macarrão", "Ralador", "Peneira", "Abridor de latas", "Tábua de corte", "Descascador", "Moedor de alho", "Funil", "Espremedor de frutas", "Formas de bolo"};
-    }UTENSILIOS_DOMESTICOS;
+        const array<string, 10> setor_COZINHA = {"Escorredor de macarrão", "Ralador", "Peneira", "Abridor de latas", "Tábua de corte", "Descascador", "Moedor de alho", "Funil", "Espremedor de frutas", "Formas de bolo"};
+    }UTENSILIOS;
 
     
     struct PAPELARIA{
-        const array<string, 10> setor_M_ESCOLAR = {"Caderno", "Lápis", "Borracha", "Caneta azul", "Caneta preta", "Canetinha", "Estojo", "Régua", "Lápis de cor", "Apontador"};
-        const array<string, 10> setor_M_ESCRITORIO = {"Grampeador", "Caixa de grampos", "Clips", "Post-it", "Pasta catálogo", "Envelope pardo", "Fita adesiva", "Tesoura", "Bloco de anotações", "Calculadora"};
+        const array<string, 10> setor_ESCOLAR = {"Caderno", "Lápis", "Borracha", "Caneta azul", "Caneta preta", "Canetinha", "Estojo", "Régua", "Lápis de cor", "Apontador"};
+        const array<string, 10> setor_ESCRITORIO = {"Grampeador", "Caixa de grampos", "Clips", "Post-it", "Pasta catálogo", "Envelope pardo", "Fita adesiva", "Tesoura", "Bloco de anotações", "Calculadora"};
         const array<string, 10> setor_PAPEIS = {"Papel sulfite A4", "Papel sulfite A3", "Papel cartão", "Papel kraft", "Papel fotográfico", "Papel seda", "Papel vegetal", "Papel canson", "Papel glossy", "Papel timbrado"};
         const array<string, 10> setor_ARQUIVOS = {"Pastas plásticas", "Pasta sanfonada", "Organizador de mesa", "Porta-canetas", "Arquivo morto", "Fichário", "Separadores", "Caixa organizadora", "Porta-documentos", "Identificadores adesivos"};
         const array<string, 10> setor_ARTE = {"Tinta guache", "Pincel", "Lápis aquarelável", "Caneta permanente", "Marcador para quadro branco", "Carvão para desenho", "Tinta acrílica", "Stencil", "Bloco de desenho", "Esponja artística"};

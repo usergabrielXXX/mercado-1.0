@@ -6,7 +6,6 @@
 #include <chrono> // lidar com o tempo
 #include <thread> // lidar com threads (junto com tempo)
 #include <array>
-#include <ranges>
 
 // namespaces
 using std::string;

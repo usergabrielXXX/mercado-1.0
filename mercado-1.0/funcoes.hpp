@@ -1,6 +1,7 @@
 #include "cabecalhos.hpp"
 
 // função que define uma pausa (sleep)
+
 void sleep(void){
 #define TEMPO 600
     sleep_for(milliseconds(TEMPO));
@@ -21,5 +22,16 @@ bool validacao_entrada_menu(const string &x){
     return true;
 }
 
+vector<string> nomes_autorizados = {"gabriel", "maria", "fernando", "luiza"};
 
+bool login(const string& nome_digitado){
+
+    for(const auto& nome : nomes_autorizados){
+        if(nome_digitado == nome){
+            return true; // achou
+        }
+    }
+
+    return false;
+}
 
