@@ -17,3 +17,4 @@ using std::chrono::milliseconds;
 using std::this_thread::sleep_for;
 using std::isdigit;
 using std::min;
+using std::stoi;

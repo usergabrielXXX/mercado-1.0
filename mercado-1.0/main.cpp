@@ -1,9 +1,10 @@
 #include "cabecalhos.hpp"
-#include "listarProdutos.hpp"
-
+#include "funcoes.hpp"
+#include "menus.hpp"
 int main(void){
 
-    listar_hortifruti();
+    for(int i=0; i < 10; i++)
+        cout << mercado->MENU.menu[i] << '\n';
 
     return 0;
 }

@@ -4,6 +4,11 @@
 // resumindo, vai ser a estrutura completa do mercado.
 
 struct MERCADO{
+
+    struct MENU{
+        const array<string, 10> menu {"Hortifruti","Carnes","Frios","Mercearia","Padaria","Bebidas","Higiene","Utensilios","Papelaria","Pet shop"};
+    }MENU;
+
     struct HORTIFRUTI{
         const array<string, 10> setor_FRUTAS = {"Maçã", "Maçã verde", "Banana", "Laranja", "Manga", "Uva", "Morango", "Abacaxi", "Pera", "Melancia"};
         const array<string, 10> setor_LEGUMES = {"Tomate", "Cenoura", "Batata", "Abóbora", "Beterraba", "Chuchu", "Pepino", "Pimentão", "Berinjela", "Quiabo"};
@@ -20,11 +25,11 @@ struct MERCADO{
         
     } CARNES;
 
-    struct FRIOS_LATICINIOS{
+    struct FRIOS{
         const array<string, 10> setor_QUEIJOS = {"Queijo muçarela", "Queijo prato", "Queijo cheddar", "Queijo parmesão", "Queijo minas", "Queijo gorgonzola", "Queijo provolone", "Queijo coalho", "Queijo ricota", "Queijo brie"};
         const array<string, 10> setor_EMBUTIDOS = {"Presunto", "Mortadela", "Peito de peru", "Salame", "Lombo canadense", "Linguiça defumada", "Blanquet de peru", "Apresuntado", "Rosbife", "Pastrami"};
         const array<string, 10> setor_LATICINIOS = {"Leite integral", "Leite desnatado", "Iogurte natural", "Iogurte saborizado", "Creme de leite", "Manteiga", "Requeijão", "Coalhada", "Chantilly", "Leite fermentado"};
-    } FRIOS_LATICINIOS;
+    } FRIOS;
 
     struct MERCEARIA{
         const array<string, 10> setor_GRAOS_CEREAIS =  {"Arroz", "Feijão carioca", "Feijão preto", "Lentilha", "Grão-de-bico", "Farinha de trigo", "Farinha de mandioca", "Farinha de milho", "Aveia", "Milho para pipoca"};
@@ -86,4 +91,4 @@ struct MERCADO{
     }PET_SHOP;
 
 
-}MERCADO; std::unique_ptr<struct MERCADO> e_produtos = std::make_unique<struct MERCADO>();
+}MERCADO; std::unique_ptr<struct MERCADO> mercado = std::make_unique<struct MERCADO>();

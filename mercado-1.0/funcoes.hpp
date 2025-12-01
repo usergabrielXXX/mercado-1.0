@@ -3,7 +3,7 @@
 // função que define uma pausa (sleep)
 
 void sleep(void){
-#define TEMPO 600
+    const int TEMPO = 600;
     sleep_for(milliseconds(TEMPO));
 }
 
