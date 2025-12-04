@@ -6,6 +6,8 @@
 #include <chrono> // lidar com o tempo
 #include <thread> // lidar com threads (junto com tempo)
 #include <array>
+#include "cores.hpp"
+// #include "banners.hpp"
 
 // namespaces
 using std::string;

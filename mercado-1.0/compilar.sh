@@ -1,3 +1,3 @@
 clear
 make
-./mercado-1.0
+#./mercado-1.0
