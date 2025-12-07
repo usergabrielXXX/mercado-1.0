@@ -8,20 +8,20 @@ void sleep(void){
 }
 
 // permitir que a entrada só seja validada se for entrada numerica
-bool validacao_entrada_menu(const string &x){
+bool inserir_numeros(const string &x){
     if(x.empty())
         return false;
     
     for(auto &c : x){
         if(!isdigit(static_cast<unsigned char>(c))){
-            cout << "somente números!" << '\n';
+            cout << NEGRITO << ITALICO << VERMELHO_CLARO << "SOMENTE NÚMEROS!" << RESET << '\n';
             return false;
         }
     }
 
     return true;
 }
-
+    
 vector<string> nomes_autorizados = {"gabriel", "maria", "fernando", "luiza"};
 
 bool login(const string& nome_digitado){
@@ -34,4 +34,3 @@ bool login(const string& nome_digitado){
 
     return false;
 }
-

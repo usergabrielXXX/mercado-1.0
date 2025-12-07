@@ -5,17 +5,8 @@
 
 int main(void){
 
-    string opcao;
+    menu_hortifruti();
 
-    while(1){
-        banner_menu();
-        banner_hortifruti();
-        for(int i=0; i < 10; i++){
-            cout << NEGRITO << i << RESET << '.' << ' ' << VERDE_CLARO << NEGRITO << ITALICO << mercado->MENU.menu[i] << RESET << '\n';
-        }
-        cout << NEGRITO << VERMELHO_CLARO << '[' << "MENU" << ']' << RESET << " Digite a opção desejada: ";
-        cin >> opcao;
-        validacao_entrada_menu(opcao);
-    }
+
     return 0;
 }

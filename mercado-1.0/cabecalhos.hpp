@@ -7,7 +7,6 @@
 #include <thread> // lidar com threads (junto com tempo)
 #include <array>
 #include "cores.hpp"
-// #include "banners.hpp"
 
 // namespaces
 using std::string;
@@ -20,3 +19,5 @@ using std::this_thread::sleep_for;
 using std::isdigit;
 using std::min;
 using std::stoi;
+using std::to_string;
+

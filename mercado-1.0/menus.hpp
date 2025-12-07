@@ -1,7 +1,14 @@
 #include "cabecalhos.hpp"
 #include "estruturasProdutos.hpp"
+#include "cores.hpp"
+#include "emojis.hpp"
+// #include "banners.hpp"
+
+extern void banner_menu(void);
+extern void banner_hortifruti(void);
 
 void menu_principal(void){
+    banner_menu();
     size_t tamanho = min({mercado->MENU.menu.size()});
 
     for(size_t i=0; i < tamanho; i++){
@@ -10,7 +17,12 @@ void menu_principal(void){
 }
 
 void menu_hortifruti(void){
-    
+    banner_hortifruti();
+    size_t tamanho = min({mercado->HORTIFRUTI.setor_FLV.size()});
+
+    for(size_t i=0; i < tamanho; i++){
+        cout << i << '.' << ' ' << mercado->HORTIFRUTI.setor_FLV[i] << '\n';
+    }
 }
 
 void menu_carnes(void){
