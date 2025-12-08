@@ -29,19 +29,22 @@ void menu_principal(void)
 
 void menu_hortifruti(/*const string &e*/)
 {
-    while (1)
+    string s, n, sair;
+
+    while (1) // loop FLV
     {
         clear();
         banner_hortifruti();
-        string s;
 
-        cout << "0. [\xf0\x9f\x8d\x8e] Frutas" << '\n';
-        cout << "1. [\xf0\x9f\x8d\x85] Legumes" << '\n';
-        cout << "2. [\xf0\x9f\xa5\xac] Verduras" << '\n';
+        cout << NEGRITO << ITALICO << "0." << RESET << " [\xf0\x9f\x8d\x8e] Frutas" << '\n';
+        cout << NEGRITO << ITALICO << "1." << RESET << " [\xf0\x9f\x8d\x85] Legumes" << '\n';
+        cout << NEGRITO << ITALICO << "2." << RESET << " [\xf0\x9f\xa5\xac] Verduras" << '\n';
+        cout << NEGRITO << ITALICO << "3." << RESET << " [\xe2\x9b\x94] Voltar ao menu anterior" << '\n';
         cout << "Insira a opção desejada: " << RESET;
         std::getline(cin, s);
+        inserir_numeros(s);
 
-        if (s == "0")
+        if (converterINT(s) == 0) // frutas
         {
             auto &frutas = mercado->HORTIFRUTI.setor_FRUTAS;
             auto &ef = emojis->emojis_hortifruti.setor_frutas;
@@ -54,11 +57,75 @@ void menu_hortifruti(/*const string &e*/)
             {
                 cout << NEGRITO << ITALICO << i << RESET << '.' << ' ' << '[' << ef[i] << ']' << VERDE_CLARO << frutas[i] << RESET << '\n';
             }
-            string n;
-            cout << "Insira a opção desejada: ";
+            cout << NEGRITO << VERMELHO_CLARO << '[' << "FRUTAS" << ']' << RESET << "Insira a opção desejada: ";
             std::getline(cin, n);
+            inserir_numeros(n);
+        }
+
+        if (converterINT(s) == 1) // legumes
+        {
+            auto &frutas = mercado->HORTIFRUTI.setor_LEGUMES;
+            auto &ef = emojis->emojis_hortifruti.setor_legumes;
+
+            size_t tf = frutas.size();
+            size_t tef = ef.size();
+            size_t limite = min(tf, tef);
+
+            for (size_t i = 0; i < limite; i++)
+            {
+                cout << NEGRITO << ITALICO << i << RESET << '.' << ' ' << '[' << ef[i] << ']' << VERDE_CLARO << frutas[i] << RESET << '\n';
+            }
+            cout << NEGRITO << VERMELHO_CLARO << '[' << "LEGUMES" << ']' << RESET << "Insira a opção desejada: ";
+            std::getline(cin, n);
+            inserir_numeros(n);
+        }
+
+        if (converterINT(s) == 2) // verduras
+        {
+            auto &frutas = mercado->HORTIFRUTI.setor_VERDURAS;
+            auto &ef = emojis->emojis_hortifruti.setor_verduras;
+
+            size_t tf = frutas.size();
+            size_t tef = ef.size();
+            size_t limite = min(tf, tef);
+
+            for (size_t i = 0; i < limite; i++)
+            {
+                cout << NEGRITO << ITALICO << i << RESET << '.' << ' ' << '[' << ef[i] << ']' << VERDE_CLARO << frutas[i] << RESET << '\n';
+            }
+            cout << NEGRITO << VERMELHO_CLARO << '[' << "VERDURAS" << ']' << RESET << "Insira a opção desejada: ";
+            std::getline(cin, n);
+            inserir_numeros(n);
+        }
+
+        if (converterINT(s) == 3) // sair do loop FLV
+        {
+            cout << "Saindo da sessão FLV!" << '\n';
+            sleep();
+            break;
         }
     }
+
+    do
+    {
+        cout << "Deseja sair dessa sessão?" << '\n'
+             << "1. sim" << '\n'
+             << "2. não" << '\n';
+        cout << "> ";
+        std::getline(cin, sair);
+        inserir_numeros(sair);
+
+        if (converterINT(sair) == 1)
+        {
+            cout << "Saindo desta sessão!" << '\n';
+            sleep();
+            break;
+        }
+        else
+        {
+            continue;
+        }
+    } while (1);
 }
 
 // void menu_carnes(void)

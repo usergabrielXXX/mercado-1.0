@@ -14,7 +14,7 @@ int main(void)
         cout << "> ";
         std::getline(cin, opcao);
         inserir_numeros(opcao);
-        if (opcao == "0")
+        if (converterINT(opcao) == 0)
         {
             menu_hortifruti();
             // string s;

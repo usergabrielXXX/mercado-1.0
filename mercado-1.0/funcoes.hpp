@@ -29,7 +29,8 @@ bool inserir_numeros(const string &x)
     {
         if (!isdigit(static_cast<unsigned char>(c)))
         {
-            cout << NEGRITO << ITALICO << VERMELHO_CLARO << "SOMENTE NÚMEROS!" << RESET << '\n';
+            cout << NEGRITO << ITALICO << VERMELHO_CLARO << "[\xf0\x9f\x9a\xab] SOMENTE NÚMEROS! [\xf0\x9f\x9a\xab]" << RESET << '\n';
+            sleep();
             return false;
         }
     }
@@ -37,23 +38,37 @@ bool inserir_numeros(const string &x)
     return true;
 }
 
-vector<string> nomes_autorizados = {"gabriel", "maria", "fernando", "luiza"};
+// vector<string> nomes_autorizados = {"gabriel", "maria", "fernando", "luiza"};
 
-bool login(const string &nome_digitado)
-{
+// bool login(const string &nome_digitado)
+// {
 
-    for (const auto &nome : nomes_autorizados)
-    {
-        if (nome_digitado == nome)
-        {
-            return true; // achou
-        }
-    }
+//     for (const auto &nome : nomes_autorizados)
+//     {
+//         if (nome_digitado == nome)
+//         {
+//             return true; // achou
+//         }
+//     }
 
-    return false;
-}
+//     return false;
+// }
 
 void clear(void)
 {
     system("clear");
+}
+
+int converterINT(const string &ss)
+{
+
+    try
+    {
+        int converter = stoi(ss);
+    }
+    catch (const std::exception &e)
+    {        
+    }
+    
+    return 0;
 }
