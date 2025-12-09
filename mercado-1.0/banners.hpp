@@ -12,9 +12,9 @@ void banner_hortifruti(void)
     cout << NEGRITO << ITALICO << VERMELHO << "HORTIFRUTI" << RESET << "\n\n";
 }
 
-void banner_carnes(void)
+void banner_acougue(void)
 {
-    cout << NEGRITO << ITALICO << VERMELHO << "CARNES" << RESET << "\n\n";
+    cout << NEGRITO << ITALICO << VERMELHO << "AÇOUGUE" << RESET << "\n\n";
 }
 
 void banner_frios(void)

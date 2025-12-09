@@ -5,7 +5,7 @@
 
 extern void banner_menu(void);
 extern void banner_hortifruti(void);
-// extern void banner_carnes(void);
+extern void banner_acougue(void);
 // extern void banner_frios(void);
 // extern void banner_mercearia(void);
 // extern void banner_padaria(void);
@@ -36,7 +36,7 @@ void menu_hortifruti(/*const string &e*/)
         clear();
         banner_hortifruti();
 
-        cout << NEGRITO << ITALICO << "0." << RESET << " [\xf0\x9f\x8d\x8e] Frutas" << '\n';
+        cout << NEGRITO << ITALICO << "0." << RESET << " [\xf0\x9f\x8d\x8e] carnes" << '\n';
         cout << NEGRITO << ITALICO << "1." << RESET << " [\xf0\x9f\x8d\x85] Legumes" << '\n';
         cout << NEGRITO << ITALICO << "2." << RESET << " [\xf0\x9f\xa5\xac] Verduras" << '\n';
         cout << NEGRITO << ITALICO << "3." << RESET << " [\xe2\x9b\x94] Voltar ao menu anterior" << '\n';
@@ -44,36 +44,36 @@ void menu_hortifruti(/*const string &e*/)
         std::getline(cin, s);
         inserir_numeros(s);
 
-        if (converterINT(s) == 0) // frutas
+        if (converterINT(s) == 0) // carnes
         {
-            auto &frutas = mercado->HORTIFRUTI.setor_FRUTAS;
-            auto &ef = emojis->emojis_hortifruti.setor_frutas;
+            auto &carnes = mercado->HORTIFRUTI.setor_FRUTAS;
+            auto &ec = emojis->emojis_hortifruti.setor_frutas;
 
-            size_t tf = frutas.size();
-            size_t tef = ef.size();
-            size_t limite = min(tf, tef);
+            size_t tc = carnes.size();
+            size_t tec = ec.size();
+            size_t limite = min(tc, tec);
 
             for (size_t i = 0; i < limite; i++)
             {
-                cout << NEGRITO << ITALICO << i << RESET << '.' << ' ' << '[' << ef[i] << ']' << VERDE_CLARO << frutas[i] << RESET << '\n';
+                cout << NEGRITO << SUBLINHADO << ITALICO << i << RESET << '.' << ' ' << '[' << ec[i] << ']' << VERDE_CLARO << carnes[i] << RESET << '\n';
             }
-            cout << NEGRITO << VERMELHO_CLARO << '[' << "FRUTAS" << ']' << RESET << "Insira a opção desejada: ";
+            cout << NEGRITO << VERMELHO_CLARO << '[' << "carnes" << ']' << RESET << "Insira a opção desejada: ";
             std::getline(cin, n);
             inserir_numeros(n);
         }
 
         if (converterINT(s) == 1) // legumes
         {
-            auto &frutas = mercado->HORTIFRUTI.setor_LEGUMES;
-            auto &ef = emojis->emojis_hortifruti.setor_legumes;
+            auto &carnes = mercado->HORTIFRUTI.setor_LEGUMES;
+            auto &ec = emojis->emojis_hortifruti.setor_legumes;
 
-            size_t tf = frutas.size();
-            size_t tef = ef.size();
-            size_t limite = min(tf, tef);
+            size_t tc = carnes.size();
+            size_t tec = ec.size();
+            size_t limite = min(tc, tec);
 
             for (size_t i = 0; i < limite; i++)
             {
-                cout << NEGRITO << ITALICO << i << RESET << '.' << ' ' << '[' << ef[i] << ']' << VERDE_CLARO << frutas[i] << RESET << '\n';
+                cout << NEGRITO << SUBLINHADO << ITALICO << i << RESET << '.' << ' ' << '[' << ec[i] << ']' << VERDE_CLARO << carnes[i] << RESET << '\n';
             }
             cout << NEGRITO << VERMELHO_CLARO << '[' << "LEGUMES" << ']' << RESET << "Insira a opção desejada: ";
             std::getline(cin, n);
@@ -82,16 +82,16 @@ void menu_hortifruti(/*const string &e*/)
 
         if (converterINT(s) == 2) // verduras
         {
-            auto &frutas = mercado->HORTIFRUTI.setor_VERDURAS;
-            auto &ef = emojis->emojis_hortifruti.setor_verduras;
+            auto &carnes = mercado->HORTIFRUTI.setor_VERDURAS;
+            auto &ec = emojis->emojis_hortifruti.setor_verduras;
 
-            size_t tf = frutas.size();
-            size_t tef = ef.size();
-            size_t limite = min(tf, tef);
+            size_t tc = carnes.size();
+            size_t tec = ec.size();
+            size_t limite = min(tc, tec);
 
             for (size_t i = 0; i < limite; i++)
             {
-                cout << NEGRITO << ITALICO << i << RESET << '.' << ' ' << '[' << ef[i] << ']' << VERDE_CLARO << frutas[i] << RESET << '\n';
+                cout << NEGRITO << SUBLINHADO << ITALICO << i << RESET << '.' << ' ' << '[' << ec[i] << ']' << VERDE_CLARO << carnes[i] << RESET << '\n';
             }
             cout << NEGRITO << VERMELHO_CLARO << '[' << "VERDURAS" << ']' << RESET << "Insira a opção desejada: ";
             std::getline(cin, n);
@@ -128,102 +128,173 @@ void menu_hortifruti(/*const string &e*/)
     } while (1);
 }
 
-// void menu_carnes(void)
-// {
-//     clear();
-//     banner_carnes();
-//     size_t tamanho = min({mercado->CARNES.setor_CARNES.size()});
+void menu_acougue(void)
+{
+    string s, n, sair;
 
-//     for (size_t i = 0; i < tamanho; i++)
-//     {
-//         cout << i << '.' << ' ' << mercado->CARNES.setor_CARNES[i] << '\n';
-//     }
-// }
+    while (1) // loop FLV
+    {
+        clear();
+        banner_acougue();
+
+        cout << NEGRITO << ITALICO << "0." << RESET << " [\xf0\x9f\xa5\xa9] Carne Bovina" << '\n';
+        cout << NEGRITO << ITALICO << "1." << RESET << " [\xf0\x9f\x90\x96] Carne Suína" << '\n';
+        cout << NEGRITO << ITALICO << "2." << RESET << " [\xf0\x9f\x90\x94] Aves" << '\n';
+        cout << NEGRITO << ITALICO << "3." << RESET << " [\xf0\x9f\x90\x9f] Peixes" << '\n';
+        cout << NEGRITO << ITALICO << "4." << RESET << " [\xf0\x9f\xa6\x90] Frutos do Mar" << '\n';
+        cout << NEGRITO << ITALICO << "5." << RESET << " [\xe2\x9b\x94] Voltar ao menu anterior" << '\n';
+        cout << "Insira a opção desejada: " << RESET;
+        std::getline(cin, s);
+        inserir_numeros(s);
+
+        if (converterINT(s) == 0) // bovina
+        {
+            auto &carnes = mercado->ACOUGUE.setor_ACOUGUE_BOVINA;
+            auto &ecarnes = emojis->emojis_carnes.setor_carneBovina;
+
+            size_t tc = carnes.size();
+            size_t tec = ecarnes.size();
+            size_t limite = min(tc, tec);
+
+            for (size_t i = 0; i < limite; i++)
+            {
+                cout << NEGRITO << SUBLINHADO << ITALICO << i << RESET << '.' << ' ' << '[' << ecarnes[i] << ']' << VERDE_CLARO << carnes[i] << RESET << '\n';
+            }
+            cout << NEGRITO << VERMELHO_CLARO << '[' << "AÇOUGUE" << ']' << RESET << "Insira a opção desejada: ";
+            std::getline(cin, n);
+            inserir_numeros(n);
+        }
+
+        if (converterINT(s) == 1) // suina
+        {
+            auto &suina = mercado->ACOUGUE.setor_ACOUGUE_SUINAS;
+            auto &es = emojis->emojis_carnes.setor_carneSuina;
+
+            size_t ssuinos = suina.size();
+            size_t ess = es.size();
+            size_t limite = min(ssuinos, ess);
+
+            for (size_t i = 0; i < limite; i++)
+            {
+                cout << NEGRITO << SUBLINHADO << ITALICO << i << RESET << '.' << ' ' << '[' << es[i] << ']' << VERDE_CLARO << suina[i] << RESET << '\n';
+            }
+            cout << NEGRITO << VERMELHO_CLARO << '[' << "SUINOS" << ']' << RESET << "Insira a opção desejada: ";
+            std::getline(cin, n);
+            inserir_numeros(n);
+        }
+
+        if (converterINT(s) == 2) // aves
+        {
+            auto &aves = mercado->ACOUGUE.setor_ACOUGUE_AVES;
+            auto &ea = emojis->emojis_carnes.setor_carneAves;
+
+            size_t ta = aves.size();
+            size_t tea = ea.size();
+            size_t limite = min(ta, tea);
+
+            for (size_t i = 0; i < limite; i++)
+            {
+                cout << NEGRITO << SUBLINHADO << ITALICO << i << RESET << '.' << ' ' << '[' << ea[i] << ']' << VERDE_CLARO << aves[i] << RESET << '\n';
+            }
+            cout << NEGRITO << VERMELHO_CLARO << '[' << "AVES" << ']' << RESET << "Insira a opção desejada: ";
+            std::getline(cin, n);
+            inserir_numeros(n);
+        }
+
+        if (converterINT(s) == 3) // peixes
+        {
+            auto &peixes = mercado->ACOUGUE.setor_ACOUGUE_PEIXES;
+            auto &epp = emojis->emojis_carnes.setor_carnePeixes;
+
+            size_t p = peixes.size();
+            size_t ep = epp.size();
+            size_t limite = min(p, ep);
+
+            for (size_t i = 0; i < limite; i++)
+            {
+                cout << NEGRITO << SUBLINHADO << ITALICO << i << RESET << '.' << ' ' << '[' << epp[i] << ']' << VERDE_CLARO << peixes[i] << RESET << '\n';
+            }
+            cout << NEGRITO << VERMELHO_CLARO << '[' << "PEIXES" << ']' << RESET << "Insira a opção desejada: ";
+            std::getline(cin, n);
+            inserir_numeros(n);
+        }
+
+        if (converterINT(s) == 4) // frutos do mar
+        {
+            auto &fmar = mercado->ACOUGUE.setor_ACOUGUE_FRUTOS_DO_MAR;
+            auto &efmar = emojis->emojis_carnes.setor_carneFrutosMar;
+
+            size_t f = fmar.size();
+            size_t ef = efmar.size();
+            size_t limite = min(f, ef);
+
+            for (size_t i = 0; i < limite; i++)
+            {
+                cout << NEGRITO << SUBLINHADO << ITALICO << i << RESET << '.' << ' ' << '[' << efmar[i] << ']' << VERDE_CLARO << fmar[i] << RESET << '\n';
+            }
+            cout << NEGRITO << VERMELHO_CLARO << '[' << "FRUTOS DO MAR" << ']' << RESET << "Insira a opção desejada: ";
+            std::getline(cin, n);
+            inserir_numeros(n);
+        }
+
+        if (converterINT(s) == 5) // sair do loop AÇOUGUE
+        {
+            cout << "Saindo da sessão AÇOUGUE!" << '\n';
+            sleep();
+            break;
+        }
+    }
+
+    do
+    {
+        cout << "Deseja sair dessa sessão?" << '\n'
+             << "1. sim" << '\n'
+             << "2. não" << '\n';
+        cout << "> ";
+        std::getline(cin, sair);
+        inserir_numeros(sair);
+
+        if (converterINT(sair) == 1)
+        {
+            cout << "Saindo desta sessão!" << '\n';
+            sleep();
+            break;
+        }
+        else
+        {
+            continue;
+        }
+    } while (1);
+}
 
 // void menu_frios(void)
 // {
-//     banner_frios();
-//     size_t tamanho = min({mercado->FRIOS.setor_FRIOS.size()});
-
-//     for (size_t i = 0; i < tamanho; i++)
-//     {
-//         cout << i << '.' << ' ' << mercado->FRIOS.setor_FRIOS[i] << '\n';
-//     }
 // }
 
 // void menu_mercearia(void)
 // {
-//     banner_mercearia();
-//     size_t tamanho = min({mercado->MERCEARIA.setor_MERCEARIA.size()});
-
-//     for (size_t i = 0; i < tamanho; i++)
-//     {
-//         cout << i << '.' << ' ' << mercado->MERCEARIA.setor_MERCEARIA[i] << '\n';
-//     }
 // }
 
 // void menu_padaria(void)
 // {
-//     banner_padaria();
-//     size_t tamanho = min({mercado->PADARIA.setor_PADARIA.size()});
-
-//     for (size_t i = 0; i < tamanho; i++)
-//     {
-//         cout << i << '.' << ' ' << mercado->PADARIA.setor_PADARIA[i] << '\n';
-//     }
 // }
 
 // void menu_bebidas(void)
 // {
-//     banner_bebidas();
-//     size_t tamanho = min({mercado->BEBIDAS.setor_BEBIDAS.size()});
-
-//     for (size_t i = 0; i < tamanho; i++)
-//     {
-//         cout << i << '.' << ' ' << mercado->BEBIDAS.setor_BEBIDAS[i] << '\n';
-//     }
 // }
 
 // void menu_higiene(void)
 // {
-//     banner_higiene();
-//     size_t tamanho = min({mercado->HIGIENE.setor_HIGIENE.size()});
-
-//     for (size_t i = 0; i < tamanho; i++)
-//     {
-//         cout << i << '.' << ' ' << mercado->HIGIENE.setor_HIGIENE[i] << '\n';
-//     }
 // }
 
 // void menu_utensilios(void)
 // {
-//     banner_utensilios();
-//     size_t tamanho = min({mercado->UTENSILIOS.setor_UTENSILIOS.size()});
-
-//     for (size_t i = 0; i < tamanho; i++)
-//     {
-//         cout << i << '.' << ' ' << mercado->UTENSILIOS.setor_UTENSILIOS[i] << '\n';
-//     }
 // }
 
 // void menu_papelaria(void)
 // {
-//     banner_pepelaria();
-//     size_t tamanho = min({mercado->PAPELARIA.setor_PAPELARIA.size()});
-
-//     for (size_t i = 0; i < tamanho; i++)
-//     {
-//         cout << i << '.' << ' ' << mercado->PAPELARIA.setor_PAPELARIA[i] << '\n';
-//     }
 // }
 
 // void menu_petshop(void)
 // {
-//     banner_petshop();
-//     size_t tamanho = min({mercado->PET_SHOP.setor_PET_SHOP.size()});
-
-//     for (size_t i = 0; i < tamanho; i++)
-//     {
-//         cout << i << '.' << ' ' << mercado->PET_SHOP.setor_PET_SHOP[i] << '\n';
-//     }
 // }

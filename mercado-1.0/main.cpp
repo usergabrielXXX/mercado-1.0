@@ -17,26 +17,18 @@ int main(void)
         if (converterINT(opcao) == 0)
         {
             menu_hortifruti();
-            // string s;
-            // cout << "insira a opção desejada: ";
-            // std::getline(cin, s);
         }
 
-        // if (opcao == "1")
-        // {
-        //     menu_carnes();
-        //     string s;
-        //     cout << "insira a opção desejada: ";
-        //     std::getline(cin, s);
-        // }
+        if (converterINT(opcao) == 1)
+        {
+            menu_acougue();
+        }
 
-        // if (opcao == "2")
-        // {
-        //     menu_frios();
-        //     string s;
-        //     cout << "insira a opção desejada: ";
-        //     std::getline(cin, s);
-        // }
+        if(converterINT(opcao) == 00){
+            cout << "Encerrando o programa!\n";
+            sleep();
+            break;
+        }
     }
 
     return 0;

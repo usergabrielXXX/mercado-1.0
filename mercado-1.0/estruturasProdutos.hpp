@@ -6,7 +6,7 @@
 struct MERCADO{
 
     struct MENU{
-        const array<string, 10> menu {"Hortifruti","Carnes","Frios","Mercearia","Padaria","Bebidas","Higiene","Utensilios","Papelaria","Pet shop"};
+        const array<string, 10> menu {"Hortifruti","Açougue","Frios","Mercearia","Padaria","Bebidas","Higiene","Utensilios","Papelaria","Pet shop"};
     }MENU;
 
     struct HORTIFRUTI{
@@ -16,14 +16,14 @@ struct MERCADO{
         
     } HORTIFRUTI;
 
-    struct CARNES{
-        const array<string, 10> setor_CARNES_BOVINA = {"Patinho", "Alcatra", "Picanha", "Coxão mole", "Coxão duro", "Acém", "Maminha", "Fraldinha", "Filé mignon", "Costela bovina"};
-        const array<string, 10> setor_CARNES_SUINAS = {"Lombo suíno", "Costela suína", "Pernil", "Linguiça toscana", "Linguiça calabresa", "Bisteca suína", "Barriga suína", "Picanha suína", "Joelho suíno", "Carne moída suína"};
-        const array<string, 10> setor_CARNES_AVES = {"Peito de frango", "Coxa de frango", "Sobrecoxa de frango", "Asa de frango", "Frango inteiro", "Filé de peito", "Coração de frango", "Moela de frango", "Tulipa de frango", "Drumet"};
-        const array<string, 10> setor_CARNES_PEIXES = {"Tilápia", "Salmão", "Merluza", "Atum", "Sardinha", "Bacalhau", "Tambaqui", "Dourado", "Pescada", "Corvina"};
-        const array<string, 10> setor_CARNES_FRUTOS_DO_MAR = {"Camarão", "Lula", "Polvo", "Mariscos", "Vieiras", "Mexilhão", "Kani", "Ostra", "Lagosta", "Caranguejo"};
+    struct ACOUGUE{
+        const array<string, 10> setor_ACOUGUE_BOVINA = {"Patinho", "Alcatra", "Picanha", "Coxão mole", "Coxão duro", "Acém", "Maminha", "Fraldinha", "Filé mignon", "Costela bovina"};
+        const array<string, 10> setor_ACOUGUE_SUINAS = {"Lombo suíno", "Costela suína", "Pernil", "Linguiça toscana", "Linguiça calabresa", "Bisteca suína", "Barriga suína", "Picanha suína", "Joelho suíno", "Carne moída suína"};
+        const array<string, 10> setor_ACOUGUE_AVES = {"Peito de frango", "Coxa de frango", "Sobrecoxa de frango", "Asa de frango", "Frango inteiro", "Filé de peito", "Coração de frango", "Moela de frango", "Tulipa de frango", "Drumet"};
+        const array<string, 10> setor_ACOUGUE_PEIXES = {"Tilápia", "Salmão", "Merluza", "Atum", "Sardinha", "Bacalhau", "Tambaqui", "Dourado", "Pescada", "Corvina"};
+        const array<string, 10> setor_ACOUGUE_FRUTOS_DO_MAR = {"Camarão", "Lula", "Polvo", "Mariscos", "Vieiras", "Mexilhão", "Kani", "Ostra", "Lagosta", "Caranguejo"};
         
-    } CARNES;
+    } ACOUGUE;
 
     struct FRIOS{
         const array<string, 10> setor_QUEIJOS = {"Queijo muçarela", "Queijo prato", "Queijo cheddar", "Queijo parmesão", "Queijo minas", "Queijo gorgonzola", "Queijo provolone", "Queijo coalho", "Queijo ricota", "Queijo brie"};
