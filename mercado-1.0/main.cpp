@@ -11,7 +11,8 @@ int main(void)
     while (1)
     {
         menu_principal();
-        cout << "> ";
+        // cout << "> ";
+        cout << NEGRITO << VERMELHO_CLARO << '[' << "MENU" << ']' << RESET << "Insira a opção desejada: ";
         std::getline(cin, opcao);
         inserir_numeros(opcao);
         if (converterINT(opcao) == 0)
@@ -24,7 +25,8 @@ int main(void)
             menu_acougue();
         }
 
-        if(converterINT(opcao) == 00){
+        if (converterINT(opcao) == 00)
+        {
             cout << "Encerrando o programa!\n";
             sleep();
             break;
@@ -33,3 +35,4 @@ int main(void)
 
     return 0;
 }
+

@@ -20,7 +20,7 @@ void sleep(void)
 }
 
 // permitir que a entrada só seja validada se for entrada numerica
-bool inserir_numeros(const string &x)
+bool validar_somente_numeros(const string &x)
 {
     if (x.empty())
         return false;
@@ -67,8 +67,9 @@ int converterINT(const string &ss)
         int converter = stoi(ss);
     }
     catch (const std::exception &e)
-    {        
+    {
+        cout << "Não insira caracteres!\n";
     }
-    
+
     return 0;
 }

@@ -25,6 +25,7 @@ void menu_principal(void)
     {
         cout << NEGRITO << ITALICO << VERDE_CLARO << i << RESET << ' ' << NEGRITO << ITALICO << mercado->MENU.menu[i] << RESET << '\n';
     }
+    cout << NEGRITO << ITALICO << VERDE_CLARO << "00 " << RESET << NEGRITO << ITALICO << "Sair" << RESET << '\n';
 }
 
 void menu_hortifruti(/*const string &e*/)
@@ -36,66 +37,66 @@ void menu_hortifruti(/*const string &e*/)
         clear();
         banner_hortifruti();
 
-        cout << NEGRITO << ITALICO << "0." << RESET << " [\xf0\x9f\x8d\x8e] carnes" << '\n';
+        cout << NEGRITO << ITALICO << "0." << RESET << " [\xf0\x9f\x8d\x8e] Frutas" << '\n';
         cout << NEGRITO << ITALICO << "1." << RESET << " [\xf0\x9f\x8d\x85] Legumes" << '\n';
         cout << NEGRITO << ITALICO << "2." << RESET << " [\xf0\x9f\xa5\xac] Verduras" << '\n';
         cout << NEGRITO << ITALICO << "3." << RESET << " [\xe2\x9b\x94] Voltar ao menu anterior" << '\n';
-        cout << "Insira a opção desejada: " << RESET;
+        cout << NEGRITO << VERMELHO_CLARO << '[' << "HORTIFRUTI" << ']' << RESET  "Insira a opção desejada: " << RESET;
         std::getline(cin, s);
-        inserir_numeros(s);
+        validar_somente_numeros(s);
 
-        if (converterINT(s) == 0) // carnes
+        if (converterINT(s) == 0) // Frutas
         {
-            auto &carnes = mercado->HORTIFRUTI.setor_FRUTAS;
+            auto &f = mercado->HORTIFRUTI.setor_FRUTAS;
             auto &ec = emojis->emojis_hortifruti.setor_frutas;
 
-            size_t tc = carnes.size();
+            size_t tc = f.size();
             size_t tec = ec.size();
             size_t limite = min(tc, tec);
 
             for (size_t i = 0; i < limite; i++)
             {
-                cout << NEGRITO << SUBLINHADO << ITALICO << i << RESET << '.' << ' ' << '[' << ec[i] << ']' << VERDE_CLARO << carnes[i] << RESET << '\n';
+                cout << NEGRITO << SUBLINHADO << ITALICO << i << RESET << '.' << ' ' << '[' << ec[i] << ']' << VERDE_CLARO << f[i] << RESET << '\n';
             }
-            cout << NEGRITO << VERMELHO_CLARO << '[' << "carnes" << ']' << RESET << "Insira a opção desejada: ";
+            cout << NEGRITO << VERMELHO_CLARO << '[' << "FRUTAS" << ']' << RESET << "Insira a opção desejada: ";
             std::getline(cin, n);
-            inserir_numeros(n);
+            validar_somente_numeros(n);
         }
 
         if (converterINT(s) == 1) // legumes
         {
-            auto &carnes = mercado->HORTIFRUTI.setor_LEGUMES;
+            auto &l = mercado->HORTIFRUTI.setor_LEGUMES;
             auto &ec = emojis->emojis_hortifruti.setor_legumes;
 
-            size_t tc = carnes.size();
+            size_t tc = l.size();
             size_t tec = ec.size();
             size_t limite = min(tc, tec);
 
             for (size_t i = 0; i < limite; i++)
             {
-                cout << NEGRITO << SUBLINHADO << ITALICO << i << RESET << '.' << ' ' << '[' << ec[i] << ']' << VERDE_CLARO << carnes[i] << RESET << '\n';
+                cout << NEGRITO << SUBLINHADO << ITALICO << i << RESET << '.' << ' ' << '[' << ec[i] << ']' << VERDE_CLARO << l[i] << RESET << '\n';
             }
             cout << NEGRITO << VERMELHO_CLARO << '[' << "LEGUMES" << ']' << RESET << "Insira a opção desejada: ";
             std::getline(cin, n);
-            inserir_numeros(n);
+            validar_somente_numeros(n);
         }
 
         if (converterINT(s) == 2) // verduras
         {
-            auto &carnes = mercado->HORTIFRUTI.setor_VERDURAS;
+            auto &v = mercado->HORTIFRUTI.setor_VERDURAS;
             auto &ec = emojis->emojis_hortifruti.setor_verduras;
 
-            size_t tc = carnes.size();
+            size_t tc = v.size();
             size_t tec = ec.size();
             size_t limite = min(tc, tec);
 
             for (size_t i = 0; i < limite; i++)
             {
-                cout << NEGRITO << SUBLINHADO << ITALICO << i << RESET << '.' << ' ' << '[' << ec[i] << ']' << VERDE_CLARO << carnes[i] << RESET << '\n';
+                cout << NEGRITO << SUBLINHADO << ITALICO << i << RESET << '.' << ' ' << '[' << ec[i] << ']' << VERDE_CLARO << v[i] << RESET << '\n';
             }
             cout << NEGRITO << VERMELHO_CLARO << '[' << "VERDURAS" << ']' << RESET << "Insira a opção desejada: ";
             std::getline(cin, n);
-            inserir_numeros(n);
+            validar_somente_numeros(n);
         }
 
         if (converterINT(s) == 3) // sair do loop FLV
@@ -104,7 +105,12 @@ void menu_hortifruti(/*const string &e*/)
             sleep();
             break;
         }
-    }
+
+        {
+            cout << VERMELHO_CLARO << "OPÇÃO INVÁLIDA!" << RESET << '\n';
+            sleep();
+        }
+    } // fim do loop
 
     do
     {
@@ -113,7 +119,7 @@ void menu_hortifruti(/*const string &e*/)
              << "2. não" << '\n';
         cout << "> ";
         std::getline(cin, sair);
-        inserir_numeros(sair);
+        validar_somente_numeros(sair);
 
         if (converterINT(sair) == 1)
         {
@@ -121,7 +127,6 @@ void menu_hortifruti(/*const string &e*/)
             sleep();
             break;
         }
-        else
         {
             continue;
         }
@@ -132,7 +137,7 @@ void menu_acougue(void)
 {
     string s, n, sair;
 
-    while (1) // loop FLV
+    while (1) // loop AÇOUGUE
     {
         clear();
         banner_acougue();
@@ -145,24 +150,24 @@ void menu_acougue(void)
         cout << NEGRITO << ITALICO << "5." << RESET << " [\xe2\x9b\x94] Voltar ao menu anterior" << '\n';
         cout << "Insira a opção desejada: " << RESET;
         std::getline(cin, s);
-        inserir_numeros(s);
+        validar_somente_numeros(s);
 
         if (converterINT(s) == 0) // bovina
         {
-            auto &carnes = mercado->ACOUGUE.setor_ACOUGUE_BOVINA;
+            auto &boi = mercado->ACOUGUE.setor_ACOUGUE_BOVINA;
             auto &ecarnes = emojis->emojis_carnes.setor_carneBovina;
 
-            size_t tc = carnes.size();
+            size_t tc = boi.size();
             size_t tec = ecarnes.size();
             size_t limite = min(tc, tec);
 
             for (size_t i = 0; i < limite; i++)
             {
-                cout << NEGRITO << SUBLINHADO << ITALICO << i << RESET << '.' << ' ' << '[' << ecarnes[i] << ']' << VERDE_CLARO << carnes[i] << RESET << '\n';
+                cout << NEGRITO << SUBLINHADO << ITALICO << i << RESET << '.' << ' ' << '[' << ecarnes[i] << ']' << VERDE_CLARO << boi[i] << RESET << '\n';
             }
             cout << NEGRITO << VERMELHO_CLARO << '[' << "AÇOUGUE" << ']' << RESET << "Insira a opção desejada: ";
             std::getline(cin, n);
-            inserir_numeros(n);
+            validar_somente_numeros(n);
         }
 
         if (converterINT(s) == 1) // suina
@@ -180,7 +185,7 @@ void menu_acougue(void)
             }
             cout << NEGRITO << VERMELHO_CLARO << '[' << "SUINOS" << ']' << RESET << "Insira a opção desejada: ";
             std::getline(cin, n);
-            inserir_numeros(n);
+            validar_somente_numeros(n);
         }
 
         if (converterINT(s) == 2) // aves
@@ -198,7 +203,7 @@ void menu_acougue(void)
             }
             cout << NEGRITO << VERMELHO_CLARO << '[' << "AVES" << ']' << RESET << "Insira a opção desejada: ";
             std::getline(cin, n);
-            inserir_numeros(n);
+            validar_somente_numeros(n);
         }
 
         if (converterINT(s) == 3) // peixes
@@ -216,7 +221,7 @@ void menu_acougue(void)
             }
             cout << NEGRITO << VERMELHO_CLARO << '[' << "PEIXES" << ']' << RESET << "Insira a opção desejada: ";
             std::getline(cin, n);
-            inserir_numeros(n);
+            validar_somente_numeros(n);
         }
 
         if (converterINT(s) == 4) // frutos do mar
@@ -234,7 +239,7 @@ void menu_acougue(void)
             }
             cout << NEGRITO << VERMELHO_CLARO << '[' << "FRUTOS DO MAR" << ']' << RESET << "Insira a opção desejada: ";
             std::getline(cin, n);
-            inserir_numeros(n);
+            validar_somente_numeros(n);
         }
 
         if (converterINT(s) == 5) // sair do loop AÇOUGUE
@@ -252,7 +257,7 @@ void menu_acougue(void)
              << "2. não" << '\n';
         cout << "> ";
         std::getline(cin, sair);
-        inserir_numeros(sair);
+        validar_somente_numeros(sair);
 
         if (converterINT(sair) == 1)
         {
@@ -260,7 +265,6 @@ void menu_acougue(void)
             sleep();
             break;
         }
-        else
         {
             continue;
         }
